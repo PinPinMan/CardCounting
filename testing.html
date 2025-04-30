@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Counting Practice</title>
+    <link rel="stylesheet" href="testing.css">
+</head>
+<body>
+    <main class="container">
+        <div class="card-app">
+            <!-- Setup Screen -->
+            <div id="setup-screen">
+                <h1>Card Counting Practice</h1>
+                
+                <div class="form-group">
+                    <label for="suits">Select Number of Suits:</label>
+                    <select id="suits" class="form-control">
+                        <option value="1">1 Suit</option>
+                        <option value="2">2 Suits</option>
+                        <option value="3">3 Suits</option>
+                        <option value="4" selected>4 Suits</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="decks">Select Number of Decks:</label>
+                    <select id="decks" class="form-control">
+                        <option value="1" selected>1 Deck</option>
+                        <option value="2">2 Decks</option>
+                        <option value="3">3 Decks</option>
+                        <option value="4">4 Decks</option>
+                    </select>
+                </div>
+                
+                <button id="start-game" class="btn btn-primary">Start Game</button>
+            </div>
+            
+            <!-- Game Screen (initially hidden) -->
+            <div id="game-screen" class="hidden">
+                <div class="game-header">
+                    <h2 id="cards-remaining">Cards Remaining: 0</h2>
+                </div>
+                
+                <div class="card-area">
+                    <div id="card-stack" class="card-stack">
+                        <!-- Cards will be added here dynamically -->
+                    </div>
+                    <div id="swipe-instruction" class="swipe-instruction">Swipe left or right</div>
+                </div>
+                
+                <div class="game-footer">
+                    <button id="reveal-btn" class="btn btn-outline btn-round">Reveal</button>
+                </div>
+            </div>
+            
+            <!-- Game Complete Screen (initially hidden) -->
+            <div id="game-complete" class="hidden">
+                <h2>Game Complete!</h2>
+                <p>All cards have been played!</p>
+                <button id="play-again" class="btn btn-primary">Play Again</button>
+            </div>
+            
+            <!-- Guess Modal (initially hidden) -->
+            <div id="guess-modal" class="modal hidden">
+                <div class="modal-content">
+                    <h3>Guess the last card's value</h3>
+                    <p>Based on the current count, will the last card be:</p>
+                    <div class="guess-buttons">
+                        <button id="guess-low" class="btn btn-outline">LOW</button>
+                        <button id="guess-zero" class="btn btn-outline">0</button>
+                        <button id="guess-high" class="btn btn-outline">HIGH</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <script src="testing.js"></script>
+</body>
+</html>
